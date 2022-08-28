@@ -4,8 +4,8 @@ import sys
 
 import click
 
-from .version import __version__, __timestamp__
 from .exception_handler import ExceptionHandler
+from .version import __timestamp__, __version__
 
 header = f"{__name__.split('.')[0]} v{__version__} {__timestamp__}"
 
@@ -16,7 +16,7 @@ header = f"{__name__.split('.')[0]} v{__version__} {__timestamp__}"
 @click.pass_context
 def cli(ctx, debug):
 
-    ctx.obj = dict(ehandler = ExceptionHandler(debug))
+    ctx.obj = dict(ehandler=ExceptionHandler(debug))
 
     """cli for python_boilerplate."""
     raise RuntimeError("Add application code to python_boilerplate/cli.py")
